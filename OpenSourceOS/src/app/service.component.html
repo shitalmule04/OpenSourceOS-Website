@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-5">
+                <div class="jumbotron">
+                    <h2 style="color: red;"> Open Source OS Info</h2>
+                    <table class="table">
+                        <tr>
+                            <th>Sr. No.</th>
+
+                            <th>Distributions Category</th>
+
+                            <th>List of OS</th>
+                        </tr>
+
+                        <tr *ngFor="let places of places">
+                            <td>{{places.id}}</td>
+                            <td>{{places.name}}</td>
+                            <td>{{places.oslist}}</td>
+
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+            <div class="col-sm-1"></div>
+
+            <div class="col-md-6">
+                <div class="jumbotron">
+                    <h3>Get OS Details Here...</h3>
+                    <select [(ngModel)]="myVar">
+                        <option value="nonunixlike">Non-Unix-Like
+                        <option value="unixlike">Unix-Like
+                        <option value="linuxdistribution">Linux Distributions List
+
+                    </select>
+
+
+                    <div [ngSwitch]="myVar">
+                        <div *ngSwitchCase="'nonunixlike'">
+                            <H2 style="text-align: center;font-size: 35px; border-width: 5px; color: red; "><strong class="heading" style="border-bottom-style: ridge;">Non-Unix-Like</strong></H2>
+                            <h3>Research </h3>
+                            <ul>
+                                <li>Amoeba (research OS by Andrew S. Tanenbaum)</li>
+                                <li>Croquet</li>
+                                <li>HelenOS research and experimental operating system</li>
+                                <li>House – Haskell User's Operating System and Environment, research OS written in Haskell and C</li>
+                                <li>ILIOS Research OS designed for routing</li>
+                                <li>L4 second generation microkernel</li>
+                                <li> Mach (from OS kernel research at Carnegie Mellon University; see NeXTSTEP )</li>
+                                <li>Nemesis Cambridge University research OS – detailed quality of service abilities</li>
+                                <li>Spring (research OS from Sun Microsystems)</li>
+                            </ul>
+                            <h3>Free and Open source </h3>
+                            <ul>
+                                <li>Cosmos (written in C#)</li>
+                                <li>FreeDOS (open source DOS variant)</li>
+                                <li>Ghost OS (written in Assembly, C/C++)</li>
+                                <li>ITS written by MIT students (for the PDP-6 and PDP-10) (written in MIDAS)</li>
+                                <li>osFree OS/2 Warp open source clone.</li>
+                                <li>OSv (written in C++)</li>
+                                <li>Phantom OS (persistent object oriented)</li>
+                                <li> ReactOS, open source OS designed to be binary compatible with Windows NT and its variants (Windows XP, Windows 2000, etc.); currently in development phase</li>
+                                <li>SharpOS (written in .NET C#)</li>
+                                <li>TempleOS (written in HolyC)</li>
+                                <li>Redox OS (written in Rust)[8]</li>
+                            </ul>
+                        </div>
+
+                        <div *ngSwitchCase="'unixlike'">
+                            <H2 style="text-align: center;font-size: 35px; border-width: 5px; color: red; "><strong class="heading" style="border-bottom-style: ridge;">Unix-Like</strong></H2>
+                            <h3>Research and other POSIX-compliant</h3>
+                            <ul>
+                                <li>MINIX (study OS developed by Andrew S. Tanenbaum in the Netherlands)</li>
+                                <li>Plan 9 from Bell Labs (distributed OS developed at Bell Labs, based on original Unix design principles yet functionally different and going much further)</li>
+                                <li>Inferno (distributed OS derived from Plan 9, originally from Bell Labs)</li>
+                                <li>Plan B (distributed OS derived from Plan 9 and Off++ microkernel)</li>
+                                <li>Unix (OS developed at Bell Labs ca 1970 initially by Ken Thompson)</li>
+                                <li>Xinu (Study OS developed by Douglas E. Comer in the United States)</li>
+
+                            </ul>
+                            <h3>Free and open source</h3>
+                            <ul>
+                                <li>
+                                    BSD (Berkeley Software Distribution, a variant of Unix for DEC VAX hardware)
+                                    <ul>
+                                        <li>
+                                            FreeBSD (one of the outgrowths of UC Regents' abandonment of CSRG's 'BSD Unix')
+                                            <ul>
+                                                <li>DragonFlyBSD, forked from FreeBSD 4.8</li>
+                                                <li>MidnightBSD, forked from FreeBSD 6.1</li>
+                                                <li>Darwin, created by Apple using FreeBSD and NeXTSTEP</li>
+                                                <li>GhostBSD</li>
+                                                <li>TrueOS (previously known as PC-BSD)</li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            NetBSD (an embedded device BSD variant)
+                                            <ul>
+                                                <li>
+                                                    OpenBSD forked from NetBSD
+                                                    <ul>
+                                                        <li>
+                                                            Bitrig forked from OpenBSD
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>GNU Linux (or simply Linux)</li>
+                                <li>RTEMS (Real-Time Executive for Multiprocessor Systems)</li>
+                                <li>Haiku (open source inspired by BeOS, under development)</li>
+                                <li>Syllable Desktop</li>
+                                <li>Univention Corporate Server</li>
+                            </ul>
+                            <h3>Other</h3>
+                            <ul>
+                                <li>Plurix</li>
+                                <li>TUNIS (University of Toronto)</li>
+                            </ul>
+                        </div>
+
+                        <div *ngSwitchCase="'linuxdistribution'">
+                            <H2 style="text-align: center;font-size: 35px; border-width: 5px; color: red; "><strong class="heading" style="border-bottom-style: ridge;">Linux Distributions List</strong></H2>
+                            <h3>RPM Based</h3>
+                            <ul>
+                                <li>
+                                    Red Hat Linux and SUSE Linux were the original major distributions that used the .rpm file format, which is today used in several package management systems. Both of these were later divided into commercial and community-supported distributions. Red Hat Linux was divided into a community-supported but Red Hat-sponsored distribution named Fedora, and a commercially supported distribution called Red Hat Enterprise Linux, whereas SuSE was divided into openSUSE and SUSE Linux Enterprise
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Fedora-Based
+                                    <ul>
+                                        <li>Qubes OS</li>
+                                        <li>Yellow Dog Linux</li>
+                                        <li>Fuduntu </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Independent RPM Distribution
+                                    <ul>
+                                        <li>Turbolinux</li>
+                                        <li>Vine Linux</li>
+                                        <li>Caldera OpenLinux</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Urpmi Based
+                                    <ul>
+                                        <li>Mandriva Linux</li>
+                                        <li> Rosa Linux</li>
+                                        <li> Unity Linux</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <h3>Debian Based</h3>
+                            <ul>
+                                <li>Debian is a distribution that emphasizes free software. It supports many hardware platforms. Debian and distributions based on it use the .deb package format and the dpkg package manager and its frontends.</li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    Sid-based
+                                    <ul>
+                                        <li>Xanadu</li>
+                                        <li>LinuxBBQ</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Testing based
+                                    <ul>
+                                        <li>Linux Mint Debian Edition (LMDE)</li>
+                                        <li>Ubuntu</li>
+                                        <li>Kali Linux</li>
+                                        <li>BackTrack</li>
+                                        <li>Parsix</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Ubuntu Based
+                                    <ul>
+                                        <li>Ubuntu is a distribution based on Debian, designed to have regular releases, a consistent user experience and commercial support on both desktops and servers.</li>
+                                        <li>Xubuntu</li>
+                                        <li>Lubuntu</li>
+                                        <li> Kubuntu</li>
+                                        <li>Edubuntu</li>
+                                        <li>Ubuntu GNOME</li>
+                                        <li>Ubuntu Touch</li>
+                                        <li>Ubuntu TV</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

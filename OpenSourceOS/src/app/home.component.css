@@ -1,0 +1,12 @@
+﻿body {
+}
+img{
+    height:200px;
+    width:200px;
+}
+h3{
+    text-decoration-color:darkblue;
+    text-decoration: underline;
+    text-emphasis:filled;
+    text-emphasis-color:darkblue;
+}

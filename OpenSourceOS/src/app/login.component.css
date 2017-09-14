@@ -1,0 +1,16 @@
+﻿body {
+
+}
+container{
+    align-items:center;
+}
+label{
+    text-align:center;
+}
+button{
+    background-color:Highlight;
+   
+}
+panel{
+   justify-content:center;
+}

@@ -1,0 +1,39 @@
+﻿
+<div class="container">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="well well-sm" style="background-color:lavenderblush;">
+            <div class="panel-group">
+                <div class="panel-group panel-info">
+                    <div class="panel-heading"><strong>OpnSourceOS Account Login</strong></div>
+                    <div class="panel-body">
+                        <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)" novalidate>
+                            <div class="form-group">
+                                <input type="email" #emailRef="ngModel" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" name="emailid" ngModel />
+                                <div *ngIf="emailRef.errors && (emailRef.dirty ||emailRef.touched)" class="alert alert-danger">
+                                    <div [hidden]="!emailRef.errors.pattern">
+                                        Oops!! Invalid Email format
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <input type="password" #passwdRef="ngModel" name="passwd" required class="form-control" maxlength="16" minlength="5" ngModel />
+                                <div *ngIf="passwdRef.errors && (passwdRef.dirty || passwdRef.touched)" class="alert alert-danger">
+                                    <div [hidden]="!passwdRef.errors.minlength">
+                                        Minimum Password length should be 5 characters
+                                    </div>
+                                    <div [hidden]="!passwdRef.errors.maxlength">
+                                        More than 16 characters not allowed.
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <button [disabled]="!loginForm.form.valid" (click)="onButton(emailRef.value,passwdRef.value)" type="button" class="btn btn-info btn-block"><strong>Login</strong></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
