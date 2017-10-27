@@ -1,4 +1,4 @@
-# OpenSourceOS-Website
-OpenSourceOS wesite using Angula JS2, TypeScript, CSS, HTML5, Bootstrap
+# OpenSourceOS
+* OpenSourceOS website using Angular 2, TypeScript, CSS, HTML5, Bootstrap.
 
-This website is helpful to understand  distibution of free and open source operating system.
+* This website is helpful to understand  distribution of free and open source operating system.
